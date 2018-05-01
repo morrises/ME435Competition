@@ -7,7 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ViewFlipper;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends GolfBallDeliveryActivity {
 
     private ViewFlipper mViewFlipper;
 
