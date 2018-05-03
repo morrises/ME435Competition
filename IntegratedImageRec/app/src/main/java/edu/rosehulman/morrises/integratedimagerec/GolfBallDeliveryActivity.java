@@ -17,12 +17,10 @@ import android.widget.NumberPicker;
 import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.ViewFlipper;
 
 import edu.rosehulman.me435.NavUtils;
-import edu.rosehulman.me435.RobotActivity;
 
-public class GolfBallDeliveryActivity extends RobotActivity {
+public class GolfBallDeliveryActivity extends ImageRecActivity {
 
 	/** Constant used with logging that you'll see later. */
 	public static final String TAG = "GolfBallDelivery";
@@ -84,7 +82,6 @@ public class GolfBallDeliveryActivity extends RobotActivity {
 
     private TextView mJumboXTextView, mJumboYTextView;
 
-    protected ViewFlipper mViewFlipper;
 
     protected LinearLayout mJumbotronLinearLayout;
 
@@ -156,9 +153,6 @@ public class GolfBallDeliveryActivity extends RobotActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // TODO: Come back to this line later.
-        setContentView(R.layout.activity_main);
-
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         mBallImageButtons = new ImageButton[]{(ImageButton) findViewById(R.id.location_1_image_button),
                 (ImageButton) findViewById(R.id.location_2_image_button),
@@ -177,7 +171,6 @@ public class GolfBallDeliveryActivity extends RobotActivity {
         mJumboXTextView = findViewById(R.id.jumbo_x);
         mJumboYTextView = findViewById(R.id.jumbo_y);
 
-        mViewFlipper = findViewById(R.id.my_view_flipper);
         mJumbotronGoStopButton = findViewById(R.id.jumbo_go_stop_button);
         mJumbotronLinearLayout = findViewById(R.id.jumbo_linear_layout);
 
