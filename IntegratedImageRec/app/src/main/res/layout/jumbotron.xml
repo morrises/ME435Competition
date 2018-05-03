@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/jumbo_linear_layout"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
@@ -11,6 +13,19 @@
         android:layout_weight="1"
         android:textSize="96sp"
         android:gravity="center" />
+
+    <Button
+        android:id="@+id/jumbo_go_stop_button"
+        style="@style/ColorButton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:background="@drawable/green_button"
+        android:onClick="handleGoOrMissionComplete"
+        android:text="Go!"
+        android:textSize="95sp" />
 
     <TextView
         android:id="@+id/jumbo_y"
