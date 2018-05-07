@@ -262,7 +262,7 @@
         style="@style/DisplayText"
         android:layout_below="@+id/set_sensor_button_table"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="0dp"
         android:text="Guess XY:" />
 
     <TextView
@@ -272,31 +272,83 @@
         android:layout_toRightOf="@id/state_label"
         android:text="---" />
 
+    <!--Paste here-->
+
+    <TextView
+        android:id="@+id/left_right_location_label"
+        android:layout_below="@id/guess_location_label"
+        style="@style/DisplayText"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:text="Left/Right Location" />
+
+    <TextView
+        android:id="@+id/left_right_location_value"
+        android:layout_alignBaseline="@id/left_right_location_label"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        style="@style/DisplayText"
+        android:text="---" />
+
+    <TextView
+        android:id="@+id/top_bottom_location_label"
+        android:layout_below="@id/left_right_location_label"
+        style="@style/DisplayText"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:text="Top/Bottom Location" />
+
+    <TextView
+        android:id="@+id/top_bottom_location_value"
+        android:layout_alignBaseline="@id/top_bottom_location_label"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        style="@style/DisplayText"
+        android:text="---" />
+
+    <TextView
+        android:id="@+id/size_percentage_label"
+        android:layout_below="@id/top_bottom_location_label"
+        style="@style/DisplayText"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:text="Size Percentage" />
+
+    <TextView
+        android:id="@+id/size_percentage_value"
+        android:layout_alignBaseline="@id/size_percentage_label"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        style="@style/DisplayText"
+        android:text="---" />
+
+    <!--End Pasted-->
+
     <TextView
         android:id="@+id/right_duty_cycle_textview"
         style="@style/DisplayText"
         android:layout_above="@+id/go_or_mission_complete_button"
         android:layout_alignParentRight="true"
-        android:layout_margin="10dp"
+        android:layout_marginRight="10dp"
         android:gravity="right"
         android:text="Right\n0"
-        android:textSize="22sp" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/left_duty_cycle_textview"
         style="@style/DisplayText"
         android:layout_above="@+id/go_or_mission_complete_button"
         android:layout_alignParentLeft="true"
-        android:layout_margin="10dp"
+        android:layout_marginHorizontal="10dp"
         android:text="Left\n0"
-        android:textSize="22sp" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/match_time_textview"
         style="@style/DisplayText"
         android:layout_above="@+id/go_or_mission_complete_button"
         android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
+        android:layout_marginHorizontal="10dp"
         android:text="5:00"
         android:textSize="22sp" />
 
