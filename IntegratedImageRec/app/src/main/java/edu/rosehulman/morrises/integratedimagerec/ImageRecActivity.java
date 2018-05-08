@@ -16,6 +16,9 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraBridgeViewBase;
 import org.opencv.android.LoaderCallbackInterface;
@@ -114,12 +117,25 @@ public class ImageRecActivity extends RobotActivity implements CameraBridgeViewB
     protected double mConeLeftRightLocation, mConeTopBottomLocation, mConeSize;
     private Mat mRgba;
 
+    protected DatabaseReference mFirebaseRef;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         // The topmost Activity that uses views should load this line:
         setContentView(R.layout.activity_main);
+
+        // Write a message to the database
+//        FirebaseDatabase database = FirebaseDatabase.getInstance();
+//        DatabaseReference myRef = database.getReference("message");
+
+        mFirebaseRef = FirebaseDatabase.getInstance().getReference();
+
+
+        // TODO: Remove this later
+//        sendMessage("Dave Fisher can use Firebase");
+
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         mLeftRightLocationTextView = findViewById(R.id.left_right_location_value);
         mTopBottomLocationTextView = findViewById(R.id.top_bottom_location_value);
@@ -191,6 +207,10 @@ public class ImageRecActivity extends RobotActivity implements CameraBridgeViewB
         }
 
 //        onImageRecComplete(true, 0.123, 0.456, 0.789);
+    }
+
+    protected void sendMessage(String message) {
+        mFirebaseRef.child("message").setValue(message);
     }
 
     private void updateImageParameters() {
